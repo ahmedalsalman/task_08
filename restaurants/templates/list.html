@@ -1,11 +1,15 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}List{% endblock title %}
 
 {% block content %}
 <br>
 <div class="row">
     {% for restaurant in restaurants %}
+
+
+    <img src="{{ restaurant.logo.url }}">
+
     <div class="col-md-4">
         <div class="card my-card">
           <div class="card-body">
@@ -17,9 +21,9 @@
                 <a href="{% url 'restaurant-detail' restaurant.id %}" class="btn btn-outline-dark">View</a>
             </li>
           </ul>
+
         </div>
     </div>
     {% endfor %}
 </div>
 {% endblock content %}
-
