@@ -4,7 +4,7 @@
 {% block title %}Create{% endblock title %}
 
 {% block content %}
-    
+
 <br>
 <div class="card">
   <h5 class="card-header">Create Restaurant</h5>
@@ -13,6 +13,7 @@
         <form action="{% url 'restaurant-create' %}" method="POST">
             {% csrf_token %}
             {{form|crispy}}
+            
             <input type="submit" value="Create" class="btn btn-outline-success">
         </form>
     </p>
